@@ -1,5 +1,3 @@
-const homeHTML = """
-
 <html>
 
 <head>
@@ -263,7 +261,7 @@ const homeHTML = """
 
     <script>
 
-        \$("#downloadFile").on("click", function () {
+        $("#downloadFile").on("click", function () {
             var xmlhttp = new XMLHttpRequest();
             xmlhttp.open("POST", "http://localhost:4000/api/download", true);
             xmlhttp.setRequestHeader("content-type", "application/json");
@@ -276,33 +274,33 @@ const homeHTML = """
                     //use response
                     if (responseJsonObj['status'] != 200) return alert(responseJsonObj['message']);
 
-                    alert(responseJsonObj['message'] + '\\nMessage from sender: ' + responseJsonObj['body']['message']);
+                    alert(responseJsonObj['message'] + '\nMessage from sender: ' + responseJsonObj['body']['message']);
 
-                    window.location.href = responseJsonObj['body']['url'];
+                    window.location(responseJsonObj['body']['url']);
                 }
             };
 
-            var jsonData = { "token": \$("#newHash").val() };
+            var jsonData = { "token": $("#newHash").val() };
             console.log(jsonData);
             xmlhttp.send(JSON.stringify(jsonData));
         });
 
-        \$("#alreadyHave").on("click", function () {
-            \$("form").hide();
-            \$("#alreadyHaveScreen").show();
+        $("#alreadyHave").on("click", function () {
+            $("form").hide();
+            $("#alreadyHaveScreen").show();
         });
 
-        \$("#goBack").on("click", function () {
+        $("#goBack").on("click", function () {
             console.log("here");
             window.location.reload();
         });
-        \$("#goBack2").on("click", function () {
+        $("#goBack2").on("click", function () {
             console.log("here");
             window.location.reload();
         });
-        \$('form')
+        $('form')
             .submit(function (e) {
-                \$.ajax({
+                $.ajax({
                     url: 'http://localhost:4000/api/upload',
                     type: 'POST',
                     data: new FormData(this),
@@ -311,17 +309,17 @@ const homeHTML = """
                     success: function (data) {
                         if (data['status'] != 200) alert(data['message']);
 
-                        \$("form").hide();
-                        \$("#hashCodeScreen").show();
-                        \$("#myInput").val(data['hash']);
+                        $("form").hide();
+                        $("#hashCodeScreen").show();
+                        $("#myInput").val(data['hash']);
                     }
                 });
                 e.preventDefault();
             });
 
-        \$("form").on("change", ".file-upload-field", function () {
-            console.log(\$(this).val().replace(/.*(\\/|\\\\)/, ''));
-            \$(this).parent(".file-upload-wrapper").attr("data-text", \$(this).val().replace(/.*(\\/|\\\\)/, ''));
+        $("form").on("change", ".file-upload-field", function () {
+            console.log($(this).val().replace(/.*(\/|\\)/, ''));
+            $(this).parent(".file-upload-wrapper").attr("data-text", $(this).val().replace(/.*(\/|\\)/, ''));
         });
 
         function copyFunction() {
@@ -342,5 +340,3 @@ const homeHTML = """
 </body>
 
 </html>
-
-""";
