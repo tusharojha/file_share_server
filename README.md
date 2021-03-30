@@ -23,6 +23,6 @@ You can find these files inside the [executables](./executables/) directory.
 
 ## Screenshots
 
-![Home Screen](./screenshots/Capture.png)
-![File Share Screen](./screenshots/Capture2.png)
-![File Download Screen](./screenshots/Capture3.png)
+![Home Screen](./screenshots/Capture.PNG)
+![File Share Screen](./screenshots/Capture2.PNG)
+![File Download Screen](./screenshots/Capture3.PNG)
