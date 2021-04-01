@@ -4,6 +4,8 @@ File share platform in Dart is a tool for sharing private files to people using 
 
 It's developed in Dart using `shelf` & `shelf router`.
 
+### Read the API docs [here](./docs/APIs.md).
+
 ## Installing 
 Follow the below commands to run the server in your local machine:
 
